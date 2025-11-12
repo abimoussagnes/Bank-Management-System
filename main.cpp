@@ -158,7 +158,7 @@ int	main(void)
 			if (accountExists(f, account_number))
 			{
 				cout << "This account already exists. Choose option 2 to view account" << endl;
-                break ;
+				break ;
 			}
 			cout << "Enter holder full name: " << endl;
 			cin >> holder_name;
@@ -185,7 +185,10 @@ int	main(void)
 			if (accountExists(f, account_number))
 			{
 				cout << "Enter amount to deposit: " << endl;
-				cin >> amount;
+				do
+				{
+					cin >> amount;
+				} while (amount < 0);
 				depositAmount(f, account_number, amount);
 			}
 			else
@@ -200,7 +203,10 @@ int	main(void)
 			if (accountExists(f, account_number))
 			{
 				cout << "Enter amount to withdraw: " << endl;
-				cin >> amount;
+				do
+				{
+					cin >> amount;
+				} while (amount < 0);
 				withdrawAmount(f, account_number, amount);
 			}
 			else
